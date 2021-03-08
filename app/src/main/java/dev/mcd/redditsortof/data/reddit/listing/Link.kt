@@ -1,23 +1,25 @@
 package dev.mcd.redditsortof.data.reddit.listing
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 /**
  * Represents a Link object
  * https://www.reddit.com/dev/api/#fullnames
  */
+@JsonClass(generateAdapter = true)
 data class Link(
-    @Json(name = "author_fullname")
-    val authorFullname: String,
-    @Json(name = "created_utc")
-    val createdUtc: String,
-    val downs: String,
-    val isSelf: String,
-    @Json(name = "num_comments")
-    val numComments: String,
-    val score: String,
-    @Json(name = "selftext")
+    val author: String,
+    @get:Json(name = "created_utc")
+    val createdUtc: Long,
+    val downs: Int,
+    @get:Json(name = "is_self")
+    val isSelf: Boolean,
+    @get:Json(name = "num_comments")
+    val numComments: Int,
+    val score: Int,
+    @get:Json(name = "selftext")
     val selfText: String,
     val title: String,
-    val ups: String,
+    val ups: Int,
 ) : ListingType
