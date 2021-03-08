@@ -2,6 +2,7 @@ package dev.mcd.redditsortof.data.reddit.listing
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import dev.mcd.redditsortof.domain.reddit.listing.Link as DomainLink
 
 /**
  * Represents a Link object
@@ -23,3 +24,16 @@ data class Link(
     val title: String,
     val ups: Int,
 ) : ListingType
+
+val Link.toDomain
+    get() = DomainLink(
+        author = author,
+        createdUtc = createdUtc,
+        downs = downs,
+        isSelf = isSelf,
+        numComments = numComments,
+        score = score,
+        selfText = selfText,
+        title = title,
+        ups = ups,
+    )

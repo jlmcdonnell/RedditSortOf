@@ -72,4 +72,6 @@ dependencies {
 
     testImplementation "junit:junit:$versions.junit"
     androidTestImplementation "androidx.test.ext:junit:$versions.androidxJunit"
+
+    testImplementation "io.mockk:mockk:$versions.mockk"
 }

@@ -1,14 +1,17 @@
 package dev.mcd.redditsortof.data.reddit.api
 
+import dev.mcd.redditsortof.data.reddit.api.ListingApiClient.Result
 import dev.mcd.redditsortof.data.reddit.api.ListingApiClient.Result.HttpError
 import dev.mcd.redditsortof.data.reddit.api.ListingApiClient.Result.Success
 import dev.mcd.redditsortof.data.reddit.listing.Link
 import dev.mcd.redditsortof.data.reddit.listing.ListingResponse
+import dev.mcd.redditsortof.data.reddit.listing.toDomain
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.http.GET
 import retrofit2.http.Path
 import javax.inject.Inject
+import dev.mcd.redditsortof.domain.reddit.listing.Link as DomainLink
 
 interface ListingApiClient {
     sealed class Result<T> {
@@ -16,7 +19,7 @@ interface ListingApiClient {
         class HttpError<T>(val code: Int) : Result<T>()
     }
 
-    fun hostLinks(subreddit: String): Result<ListingResponse<Link>>
+    suspend fun getHotLinks(subreddit: String): Result<List<DomainLink>>
 }
 
 class ListingApiClientImpl @Inject constructor(
@@ -32,14 +35,16 @@ class ListingApiClientImpl @Inject constructor(
         retrofit.create(ListingApi::class.java)
     }
 
-    override fun hostLinks(subreddit: String): ListingApiClient.Result<ListingResponse<Link>> {
-        return executeRequest(listingApi.hotLinks(subreddit))
+    override suspend fun getHotLinks(subreddit: String): Result<List<DomainLink>> {
+        return executeRequest(listingApi.hotLinks(subreddit)) {
+            it.data.children.map { listing -> listing.data.toDomain }
+        }
     }
 
-    private fun <T> executeRequest(call: Call<T>): ListingApiClient.Result<T> {
+    private fun <Body, Out> executeRequest(call: Call<Body>, map: (Body) -> Out): Result<Out> {
         val response = call.execute()
         return if (response.isSuccessful) {
-            Success(response.body()!!)
+            Success(map(response.body()!!))
         } else {
             HttpError(response.code())
         }

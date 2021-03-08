@@ -13,6 +13,8 @@ A small Android app to demonstrate Android development practices using the Reddi
 - [Hilt](http://dagger.dev/hilt) dependency injection framework
 - [Jetpack Navigation](https://developer.android.com/guide/navigation)
 - [Retrofit](https://square.github.io/retrofit/) for API requests
+- [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) for asynchronous programming
+- [MockK](https://github.com/mockk/mockk) testing library for mocking object with Kotlin
 
 ## Reddit API
 
