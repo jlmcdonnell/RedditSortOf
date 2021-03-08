@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/jlmcdonnell/RedditSortOf/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/jlmcdonnell/RedditSortOf/actions/workflows/main.yml)
 
-A small Android app to demonstrate Android development practises using the Reddit API
+A small Android app to demonstrate Android development practices using the Reddit API
 
 ## Requirements
 
@@ -10,8 +10,9 @@ A small Android app to demonstrate Android development practises using the Reddi
 
 ## Tech stack
 
-- [Hilt dependency injection framework](http://dagger.dev/hilt)
+- [Hilt](http://dagger.dev/hilt) dependency injection framework
 - [Jetpack Navigation](https://developer.android.com/guide/navigation)
+- [Retrofit](https://square.github.io/retrofit/) for API requests
 
 ## Reddit API
 
