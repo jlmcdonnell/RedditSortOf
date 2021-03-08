@@ -12,3 +12,7 @@ A small Android app to demonstrate Android development practises using the Reddi
 
 - [Hilt dependency injection framework](http://dagger.dev/hilt)
 - [Jetpack Navigation](https://developer.android.com/guide/navigation)
+
+## Reddit API
+
+- The Reddit API responses are parsed as per their [documentation](https://www.reddit.com/dev/api/)
