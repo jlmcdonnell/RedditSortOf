@@ -3,6 +3,7 @@ package dev.mcd.redditsortof.domain.reddit.listing
 import dev.mcd.redditsortof.data.reddit.api.ListingApiClient
 import dev.mcd.redditsortof.data.reddit.api.ListingApiClient.Result
 import dev.mcd.redditsortof.data.reddit.api.ListingApiClient.Result.HttpError
+import dev.mcd.redditsortof.data.reddit.listing.GetHotLinksImpl
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.every

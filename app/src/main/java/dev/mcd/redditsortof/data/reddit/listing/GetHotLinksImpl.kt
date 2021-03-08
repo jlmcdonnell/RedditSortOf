@@ -1,6 +1,7 @@
-package dev.mcd.redditsortof.domain.reddit.listing
+package dev.mcd.redditsortof.data.reddit.listing
 
 import dev.mcd.redditsortof.data.reddit.api.ListingApiClient
+import dev.mcd.redditsortof.domain.reddit.listing.GetHotLinks
 import dev.mcd.redditsortof.domain.reddit.listing.GetHotLinks.Result.Error
 import dev.mcd.redditsortof.domain.reddit.listing.GetHotLinks.Result.Success
 import timber.log.Timber

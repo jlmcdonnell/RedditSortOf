@@ -1,12 +1,10 @@
-package dev.mcd.redditsortof.data.reddit.di
+package dev.mcd.redditsortof.data.reddit.common.di
 
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import dev.mcd.redditsortof.data.environment.Environment
-import dev.mcd.redditsortof.data.reddit.api.ListingApiClient
-import dev.mcd.redditsortof.data.reddit.api.ListingApiClientImpl
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
@@ -27,10 +25,5 @@ class RedditModule {
             .baseUrl(apiHost)
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
-    }
-
-    @Provides
-    fun listingApi(@RedditApi retrofit: Retrofit): ListingApiClient {
-        return ListingApiClientImpl(retrofit)
     }
 }
