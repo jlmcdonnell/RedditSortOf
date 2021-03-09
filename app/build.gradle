@@ -15,6 +15,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "REDDIT_API_HOST", "\"https://www.reddit.com\""
         buildConfigField "String", "SHOWCASE_SUBREDDIT_SLUG", "\"android\""
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -68,6 +69,8 @@ dependencies {
 
     implementation "com.squareup.moshi:moshi-kotlin:$versions.moshi"
     kapt "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshi"
+
+    implementation "com.android.support:multidex:$versions.multidex"
 
     testImplementation "junit:junit:$versions.junit"
     androidTestImplementation "androidx.test.ext:junit:$versions.androidxJunit"

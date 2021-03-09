@@ -3,6 +3,7 @@ package dev.mcd.redditsortof.data.listing
 import dev.mcd.redditsortof.data.listing.ListingApiClient.Result
 import dev.mcd.redditsortof.data.listing.ListingApiClient.Result.HttpError
 import dev.mcd.redditsortof.data.listing.ListingApiClient.Result.Success
+import dev.mcd.redditsortof.data.reddit.di.RedditApi
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.http.GET
@@ -20,6 +21,7 @@ interface ListingApiClient {
 }
 
 class ListingApiClientImpl @Inject constructor(
+    @RedditApi
     private val retrofit: Retrofit,
 ) : ListingApiClient {
 

@@ -13,6 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import dev.mcd.redditsortof.R
 import dev.mcd.redditsortof.databinding.ListingFragmentBinding
 import dev.mcd.redditsortof.domain.listing.Link
+import dev.mcd.redditsortof.extensions.openUrl
 import dev.mcd.redditsortof.presentation.listing.ListingViewModel.State
 import dev.mcd.redditsortof.presentation.listing.ListingViewModel.State.*
 import kotlinx.coroutines.flow.launchIn
@@ -34,6 +35,11 @@ class ListingFragment : Fragment(R.layout.listing_fragment) {
     private fun setupUI() {
         binding.linksView.adapter = adapter
         binding.linksView.layoutManager = LinearLayoutManager(requireContext())
+
+        adapter.setOnItemClickListener { item, _ ->
+            val link = (item as LinkItem).link
+            viewModel.onLinkClicked(link)
+        }
     }
 
     private fun setupVM() {
@@ -44,7 +50,7 @@ class ListingFragment : Fragment(R.layout.listing_fragment) {
 
     private fun handleState(state: State) {
         when (state) {
-            is NavigateToLink -> TODO()
+            is OpenPost -> openPost(state.url)
             is ShowError -> showError()
             is DisplayLinks -> displayLinks(state.links)
             is HideLoading -> hideLoading()
@@ -69,5 +75,9 @@ class ListingFragment : Fragment(R.layout.listing_fragment) {
 
     private fun showError() {
         Toast.makeText(requireContext(), R.string.generic_error, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun openPost(url: String) {
+        requireActivity().openUrl(url)
     }
 }

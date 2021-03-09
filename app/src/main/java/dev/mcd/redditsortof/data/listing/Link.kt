@@ -23,6 +23,7 @@ data class Link(
     val selfText: String,
     val title: String,
     val ups: Int,
+    val url: String,
 ) : ListingType
 
 val Link.toDomain
@@ -36,4 +37,5 @@ val Link.toDomain
         selfText = selfText,
         title = title,
         ups = ups,
+        url = url,
     )

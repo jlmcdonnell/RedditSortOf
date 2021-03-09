@@ -40,6 +40,7 @@ class ListingResponseTest {
             selfText = "test selftext",
             title = "test title",
             ups = 4,
+            url = "https://www.reddit.com/r/Android/comments/m0e80k/moronic_monday_mar_08_2021_your_weekly_questions",
         )
 
         val listings = response.data.children

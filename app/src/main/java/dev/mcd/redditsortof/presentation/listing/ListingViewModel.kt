@@ -19,7 +19,7 @@ class ListingViewModel @Inject constructor(
 
     sealed class State {
         class DisplayLinks(val links: List<Link>) : State()
-        class NavigateToLink(val link: Link) : State()
+        class OpenPost(val url: String) : State()
         object ShowLoading : State()
         object HideLoading : State()
         object ShowError : State()
@@ -52,6 +52,6 @@ class ListingViewModel @Inject constructor(
             }
 
     fun onLinkClicked(link: Link) {
-        eventState.tryEmit(State.NavigateToLink(link))
+        eventState.tryEmit(State.OpenPost(link.url))
     }
 }
