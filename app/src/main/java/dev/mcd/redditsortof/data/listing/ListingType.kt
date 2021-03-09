@@ -1,4 +1,4 @@
-package dev.mcd.redditsortof.data.reddit.listing
+package dev.mcd.redditsortof.data.listing
 
 /**
  * Marker interface to denote a type of listing, e.g. Link or Account

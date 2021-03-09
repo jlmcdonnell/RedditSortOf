@@ -1,4 +1,4 @@
-package dev.mcd.redditsortof.data.reddit.common
+package dev.mcd.redditsortof.data.reddit
 
 typealias FullnameKind = String
 

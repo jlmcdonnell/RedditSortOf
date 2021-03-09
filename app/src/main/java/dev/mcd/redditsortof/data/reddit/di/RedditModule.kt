@@ -1,4 +1,4 @@
-package dev.mcd.redditsortof.data.reddit.common.di
+package dev.mcd.redditsortof.data.reddit.di
 
 import dagger.Module
 import dagger.Provides

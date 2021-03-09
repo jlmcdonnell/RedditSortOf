@@ -1,8 +1,8 @@
-package dev.mcd.redditsortof.data.reddit.listing
+package dev.mcd.redditsortof.data.listing
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import dev.mcd.redditsortof.domain.reddit.listing.Link as DomainLink
+import dev.mcd.redditsortof.domain.listing.Link as DomainLink
 
 /**
  * Represents a Link object

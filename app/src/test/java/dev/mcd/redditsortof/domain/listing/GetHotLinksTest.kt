@@ -1,9 +1,9 @@
-package dev.mcd.redditsortof.domain.reddit.listing
+package dev.mcd.redditsortof.domain.listing
 
-import dev.mcd.redditsortof.data.reddit.api.ListingApiClient
-import dev.mcd.redditsortof.data.reddit.api.ListingApiClient.Result
-import dev.mcd.redditsortof.data.reddit.api.ListingApiClient.Result.HttpError
-import dev.mcd.redditsortof.data.reddit.listing.GetHotLinksImpl
+import dev.mcd.redditsortof.data.listing.GetHotLinksImpl
+import dev.mcd.redditsortof.data.listing.ListingApiClient
+import dev.mcd.redditsortof.data.listing.ListingApiClient.Result
+import dev.mcd.redditsortof.data.listing.ListingApiClient.Result.HttpError
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.every

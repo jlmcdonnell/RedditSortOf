@@ -1,10 +1,10 @@
-package dev.mcd.redditsortof.data.reddit.listing
+package dev.mcd.redditsortof.data.listing
 
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.JsonReader
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
-import dev.mcd.redditsortof.data.reddit.common.fullnameTypeLink
+import dev.mcd.redditsortof.data.reddit.fullnameTypeLink
 import okio.Okio
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue

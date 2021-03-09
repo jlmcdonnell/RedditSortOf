@@ -1,7 +1,7 @@
-package dev.mcd.redditsortof.data.reddit.listing
+package dev.mcd.redditsortof.data.listing
 
 import com.squareup.moshi.JsonClass
-import dev.mcd.redditsortof.data.reddit.common.FullnameKind
+import dev.mcd.redditsortof.data.reddit.FullnameKind
 
 /**
  * https://www.reddit.com/dev/api/#listings

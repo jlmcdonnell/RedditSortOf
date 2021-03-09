@@ -62,7 +62,6 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutinesCore"
 
     implementation "com.xwray:groupie:$versions.groupie"
-    implementation "com.xwray:groupie-kotlin-android-extensions:$versions.groupie"
 
     implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
     implementation "com.squareup.retrofit2:converter-moshi:$versions.retrofit"
@@ -72,6 +71,8 @@ dependencies {
 
     testImplementation "junit:junit:$versions.junit"
     androidTestImplementation "androidx.test.ext:junit:$versions.androidxJunit"
+
+    testImplementation "android.arch.core:core-testing:$versions.coreTesting"
 
     testImplementation "io.mockk:mockk:$versions.mockk"
 }

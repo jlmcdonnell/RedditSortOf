@@ -5,13 +5,13 @@ import javax.inject.Inject
 
 interface Environment {
     val redditApiHost: String
-    val showcaseSubreddit: String
+    val demoSubredditName: String
 }
 
 class EnvironmentImpl @Inject constructor() : Environment {
     override val redditApiHost: String
         get() = BuildConfig.REDDIT_API_HOST
 
-    override val showcaseSubreddit: String
+    override val demoSubredditName: String
         get() = BuildConfig.SHOWCASE_SUBREDDIT_SLUG
 }

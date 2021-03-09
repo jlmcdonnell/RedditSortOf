@@ -1,6 +1,7 @@
 ext.versions = [
         androidGradle         : '7.0.0-alpha08',
         androidxJunit         : "1.1.2",
+        androidTesting        : "1.1.1",
         appCompat             : "1.2.0",
         coreKtx               : "1.3.2",
         coroutinesCore        : "1.4.2",

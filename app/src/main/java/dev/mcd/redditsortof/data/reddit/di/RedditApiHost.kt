@@ -1,7 +1,7 @@
-package dev.mcd.redditsortof.data.reddit.common.di
+package dev.mcd.redditsortof.data.reddit.di
 
 import javax.inject.Qualifier
 
 @Qualifier
 @Retention(AnnotationRetention.SOURCE)
-annotation class RedditApi
+annotation class RedditApiHost

@@ -1,4 +1,4 @@
-package dev.mcd.redditsortof.domain.reddit.listing
+package dev.mcd.redditsortof.domain.listing
 
 interface GetHotLinks {
     sealed class Result {

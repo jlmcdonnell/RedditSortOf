@@ -1,17 +1,14 @@
-package dev.mcd.redditsortof.data.reddit.api
+package dev.mcd.redditsortof.data.listing
 
-import dev.mcd.redditsortof.data.reddit.api.ListingApiClient.Result
-import dev.mcd.redditsortof.data.reddit.api.ListingApiClient.Result.HttpError
-import dev.mcd.redditsortof.data.reddit.api.ListingApiClient.Result.Success
-import dev.mcd.redditsortof.data.reddit.listing.Link
-import dev.mcd.redditsortof.data.reddit.listing.ListingResponse
-import dev.mcd.redditsortof.data.reddit.listing.toDomain
+import dev.mcd.redditsortof.data.listing.ListingApiClient.Result
+import dev.mcd.redditsortof.data.listing.ListingApiClient.Result.HttpError
+import dev.mcd.redditsortof.data.listing.ListingApiClient.Result.Success
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.http.GET
 import retrofit2.http.Path
 import javax.inject.Inject
-import dev.mcd.redditsortof.domain.reddit.listing.Link as DomainLink
+import dev.mcd.redditsortof.domain.listing.Link as DomainLink
 
 interface ListingApiClient {
     sealed class Result<T> {
@@ -27,7 +24,7 @@ class ListingApiClientImpl @Inject constructor(
 ) : ListingApiClient {
 
     private interface ListingApi {
-        @GET("/{subreddit}/hot.json")
+        @GET("/r/{subreddit}/hot.json")
         fun hotLinks(@Path("subreddit") subreddit: String): Call<ListingResponse<Link>>
     }
 

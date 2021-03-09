@@ -1,9 +1,8 @@
-package dev.mcd.redditsortof.data.reddit.listing
+package dev.mcd.redditsortof.data.listing
 
-import dev.mcd.redditsortof.data.reddit.api.ListingApiClient
-import dev.mcd.redditsortof.domain.reddit.listing.GetHotLinks
-import dev.mcd.redditsortof.domain.reddit.listing.GetHotLinks.Result.Error
-import dev.mcd.redditsortof.domain.reddit.listing.GetHotLinks.Result.Success
+import dev.mcd.redditsortof.domain.listing.GetHotLinks
+import dev.mcd.redditsortof.domain.listing.GetHotLinks.Result.Error
+import dev.mcd.redditsortof.domain.listing.GetHotLinks.Result.Success
 import timber.log.Timber
 import javax.inject.Inject
 
